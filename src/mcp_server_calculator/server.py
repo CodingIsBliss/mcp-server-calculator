@@ -2,7 +2,7 @@
 
 from mcp.server.fastmcp import FastMCP
 
-mcp = FastMCP("Calculator")
+mcp = FastMCP("Calculator", host="0.0.0.0", port=8000)
 
 
 @mcp.tool()
@@ -55,7 +55,7 @@ def modulo(a: float, b: float) -> float:
 
 def main():
     """Entry-point used by the console-script."""
-    mcp.run(transport="streamable-http", host="0.0.0.0", port=8000)
+    mcp.run(transport="streamable-http")
 
 
 if __name__ == "__main__":
